@@ -1,0 +1,49 @@
+{
+  "name": "notebook-generator",
+  "version": "1.4.7",
+  "description": "Notebook generator for programming contest. (or \"something useful to share your code in pdf\")",
+  "main": "notebookgen.js",
+  "scripts": {
+    "test": "standard",
+    "fix-standard": "standard --fix"
+  },
+  "keywords": [
+    "pdf",
+    "notebook-icpc",
+    "programming",
+    "contest",
+    "hacker",
+    "competitive",
+    "coding",
+    "codechef",
+    "codeforces",
+    "ACM",
+    "ICPC",
+    "codejam",
+    "hackerrank"
+  ],
+  "author": "Manuel Pineda <manuel.felipe.pineda@gmail.com> (http://github.com/pin3da)",
+  "contributors": [
+    "Diego Alejandro Restrepo <diegorestrepo68@utp.edu.co> (https://github.com/Diegores14)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/pin3da/notebook-generator"
+  },
+  "bugs": {
+    "url": "http://github.com/pin3da/notebook-generator/issues"
+  },
+  "license": "MPL-2.0",
+  "dependencies": {
+    "commander": "^7.0.0",
+    "latex": "0.0.1",
+    "through2": "^4.0.2",
+    "tmp": "0.2.1"
+  },
+  "bin": {
+    "notebook-generator": "./bin/notebookgen"
+  },
+  "devDependencies": {
+    "standard": "^16.0.3"
+  }
+}
