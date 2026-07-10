@@ -1,0 +1,180 @@
+Sea la sucesión de Fibonacci definida por
+\[
+F(1)=1,\qquad F(2)=2,
+\]
+y recordemos que para cualquier \(n \ge 2\),
+\[
+F(n+1)=F(n)+F(n-1).
+\]
+La idea es representar dos términos consecutivos de la sucesión como un vector.
+\[
+\begin{bmatrix}
+F(n) & F(n-1)
+\end{bmatrix}
+\]
+Ahora nos hacemos la siguiente pregunta:
+\textit{¿Existe una matriz que transforme este vector en el siguiente par de términos?}
+Es decir, queremos encontrar una matriz \(M\) tal que
+\[
+\begin{bmatrix}
+F(n) & F(n-1)
+\end{bmatrix}
+M
+=
+\begin{bmatrix}
+F(n+1) & F(n)
+\end{bmatrix}.
+\]
+Sabemos que
+\[
+F(n+1)=F(n)+F(n-1),
+\]
+por lo que el primer elemento del nuevo vector debe ser la suma de ambos elementos, mientras que el segundo simplemente debe conservar el valor de \(F(n)\).
+La matriz que realiza exactamente esta transformación es
+\[
+M=
+\begin{bmatrix}
+1 & 1\\
+1 & 0
+\end{bmatrix}.
+\]
+En efecto,
+\[
+\begin{aligned}
+\begin{bmatrix}
+F(n) & F(n-1)
+\end{bmatrix}
+\begin{bmatrix}
+1 & 1\\
+1 & 0
+\end{bmatrix}
+&=
+\begin{bmatrix}
+F(n)\cdot1+F(n-1)\cdot1 &
+F(n)\cdot1+F(n-1)\cdot0
+\end{bmatrix}
+\\[2mm]
+&=
+\begin{bmatrix}
+F(n)+F(n-1) &
+F(n)
+\end{bmatrix}
+\\[2mm]
+&=
+\begin{bmatrix}
+F(n+1) &
+F(n)
+\end{bmatrix}.
+\end{aligned}
+\]
+
+Es decir, cada multiplicación por la matriz avanza exactamente un término en la sucesión.
+
+Por ejemplo,
+
+\[
+\begin{bmatrix}
+2 & 1
+\end{bmatrix}
+\begin{bmatrix}
+1 & 1\\
+1 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+3 & 2
+\end{bmatrix},
+\]
+
+que corresponde a
+
+\[
+(F(2),F(1))
+\longrightarrow
+(F(3),F(2)).
+\]
+
+Multiplicando nuevamente,
+
+\[
+\begin{bmatrix}
+3 & 2
+\end{bmatrix}
+\begin{bmatrix}
+1 & 1\\
+1 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+5 & 3
+\end{bmatrix},
+\]
+
+obtenemos
+
+\[
+(F(3),F(2))
+\longrightarrow
+(F(4),F(3)).
+\]
+
+Cada multiplicación avanza un paso más:
+
+\[
+(F(2),F(1))
+\rightarrow
+(F(3),F(2))
+\rightarrow
+(F(4),F(3))
+\rightarrow
+(F(5),F(4))
+\rightarrow
+\cdots
+\]
+
+Después de realizar \(n-2\) transformaciones, llegamos a
+
+\[
+\boxed{
+\begin{bmatrix}
+F(n) & F(n-1)
+\end{bmatrix}
+=
+\begin{bmatrix}
+F(2) & F(1)
+\end{bmatrix}
+M^{\,n-2}
+}
+\]
+
+o, sustituyendo los valores iniciales,
+
+\[
+\boxed{
+\begin{bmatrix}
+F(n) & F(n-1)
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 & 1
+\end{bmatrix}
+\begin{bmatrix}
+1 & 1\\
+1 & 0
+\end{bmatrix}^{n-2}
+}
+\]
+
+Por ejemplo, para calcular \(F(4561)\) solo necesitamos obtener
+
+\[
+M^{4559}.
+\]
+
+En lugar de multiplicar la matriz \(4559\) veces, utilizamos **Exponenciación Binaria**, que calcula la potencia de una matriz en únicamente \(O(\log n)\) multiplicaciones.
+
+Como el tamaño de la matriz es constante (\(2\times2\)), cada multiplicación cuesta \(O(1)\). Por tanto, el algoritmo completo tiene complejidad
+
+\[
+\boxed{O(\log n)}.
+\]

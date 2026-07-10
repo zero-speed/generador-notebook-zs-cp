@@ -1,29 +1,3 @@
-/*
-imagina que quieres calcualr el fibonacci de 4561
-podriamos representar fibo(1) = 1 y fibo(2) = 2
-o tambien como un vector [1 2] y para calcular por el
-tercer termino, podriamos multiplicar por una matriz
-[1 1]
-[1 0]
-entonces tendriamos 
-[1 2] * [1 1] 
-        [1 0]
-lo que nos da [3 1]
-y para el cuarto termino, multiplicamos el resultado por la misma matriz
-[3 1] * [1 1]
-        [1 0]
-para el quinto termino, multiplicamos el resultado por la misma matriz
-[4 3] * [1 1]
-        [1 0]
-podemos ver el patron
-entonces podriamos generalizarlo
-fibo(n) = [fibo(1) fibo(2)] * [1 1]* [1 0] *
-                              [1 0]  [1 0]   ... n-2 veces
-entonces para calcular el fibonacci de 4561, solo tenemos que multiplicar 
-la matriz N veces y usar la tecnica de exponenciacion BINARIA para multiplicar 
-la matriz log(n) veces, lo que nos da un resultado en O(log(n))
-*/
-
 #define ll long long
 #define MOD 1000000007 
 ll fibonacci(ll n){

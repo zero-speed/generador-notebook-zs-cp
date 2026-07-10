@@ -58,3 +58,4 @@ podrás incluir archivos .tex que se renderizarán como código LaTeX.
 
 ----
 [Manuel Pineda](https://github.com/pin3da/) & [Diego Restrepo](https://github.com/Diegores14)
+node bin/notebookgen ./contenido --output ./notebook.pdf

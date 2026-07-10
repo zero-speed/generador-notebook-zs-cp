@@ -1,0 +1,38 @@
+{
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\begin{longtable}{@{}>{\ttfamily}p{6.8cm} p{3.8cm} p{1cm}@{} }
+\toprule
+Función & Descripción & Ordenado \\
+\midrule
+\endhead
+
+lower\_bound(v.begin(),v.end(),x) & Primer elemento $\ge x$ & Sí\\
+
+upper\_bound(v.begin(),v.end(),x) & Primer elemento $>x$ & Sí\\
+
+binary\_search(v.begin(),v.end(),x) & Verifica si existe $x$ & Sí\\
+
+equal\_range(v.begin(),v.end(),x) & Devuelve $[lower,upper)$ & Sí\\
+
+sort(v.begin(),v.end()) & Orden ascendente & No\\
+
+sort(v.begin(),v.end(),greater<int>()) & Orden descendente & No\\
+
+is\_sorted(v.begin(),v.end()) & Comprueba si está ordenado & No\\
+
+reverse(v.begin(),v.end()) & Invierte el arreglo & No\\
+
+nth\_element(v.begin(),v.begin()+k,v.end()) & Coloca el k-ésimo elemento & No\\
+
+min\_element(v.begin(),v.end()) & Mínimo elemento & No\\
+
+max\_element(v.begin(),v.end()) & Máximo elemento & No\\
+
+count(v.begin(),v.end(),x) & Cuenta ocurrencias & No\\
+
+find(v.begin(),v.end(),x) & Búsqueda lineal & No\\
+
+\bottomrule
+\end{longtable}
+}
