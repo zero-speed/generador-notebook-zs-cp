@@ -9,7 +9,12 @@ using namespace std;
 #define fastio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
 void solve(){
-    
+    // estructura de una funcion lambda
+    auto nombre = [&](parámetros) -> tipo_retorno {
+        // código
+        return valor;
+    };
+    nombre(parámetros);
 }
 
 int main(){
