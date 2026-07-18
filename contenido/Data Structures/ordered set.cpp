@@ -1,6 +1,8 @@
+// ordered_set > set, permite consultar el k-esimo elemento y 
+//cuantos elementos son menores que x, eso en O(log(N))
 #include <bits/stdc++.h> // complexity O(log (n))
 #include <ext/pb_ds/assoc_container.hpp> // necesario
-#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/tree_policy.hpp>    // necesario
 
 using namespace std;
 using namespace __gnu_pbds;

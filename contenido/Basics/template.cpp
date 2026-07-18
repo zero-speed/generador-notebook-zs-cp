@@ -8,6 +8,14 @@ using namespace std;
 #define endl "\n"
 #define fastio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
+// 4 direcciones
+vector<int> dx = {0,0,-1,1};
+vector<int> dy = {-1,1,0,0};
+
+// 8 direcciones
+vector<int> dx = {0,0,-1,1,-1,-1,1,1};
+vector<int> dy = {-1,1,0,0,-1,1,-1,1};
+
 void solve(){
     // estructura de una funcion lambda
     auto nombre = [&](parámetros) -> tipo_retorno {
